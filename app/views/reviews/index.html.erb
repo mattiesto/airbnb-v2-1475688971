@@ -26,7 +26,7 @@
       <% @reviews.each do |review| %>
       <tr>
         <td><%= review.content %></td>
-        <td><%= review.user_id %></td>
+        <td><%= review.user.username %></td>
         <td><%= review.rating %></td>
         <td><%= review.booking_id %></td>
         <td><%= review.listing_id %></td>
