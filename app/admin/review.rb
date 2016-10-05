@@ -1,5 +1,7 @@
 ActiveAdmin.register Review do
 
+ permit_params :content, :user_id, :rating, :booking_id, :listing_id, :accuracy_rating, :communication_rating, :cleanliness_rating, :location_rating, :check_in_rating, :value_rating
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
