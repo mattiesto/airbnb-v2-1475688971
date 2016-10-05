@@ -1,0 +1,55 @@
+<div class="page-header">
+  <h3>Review #<%= @review.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Content</dt>
+      <dd><%= @review.content %></dd>
+
+      <dt>User</dt>
+      <dd><%= @review.user_id %></dd>
+
+      <dt>Rating</dt>
+      <dd><%= @review.rating %></dd>
+
+      <dt>Booking</dt>
+      <dd><%= @review.booking_id %></dd>
+
+      <dt>Listing</dt>
+      <dd><%= @review.listing_id %></dd>
+
+      <dt>Accuracy rating</dt>
+      <dd><%= @review.accuracy_rating %></dd>
+
+      <dt>Communication rating</dt>
+      <dd><%= @review.communication_rating %></dd>
+
+      <dt>Cleanliness rating</dt>
+      <dd><%= @review.cleanliness_rating %></dd>
+
+      <dt>Location rating</dt>
+      <dd><%= @review.location_rating %></dd>
+
+      <dt>Check in rating</dt>
+      <dd><%= @review.check_in_rating %></dd>
+
+      <dt>Value rating</dt>
+      <dd><%= @review.value_rating %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/reviews" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/reviews/<%= @review.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_review/<%= @review.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
