@@ -17,7 +17,7 @@
 
       <% @guests.each do |guest| %>
       <tr>
-        <td><%= guest.user_id %></td>
+        <td><%= guest.user.username %></td>
         <td><%= guest.bookmarks %></td>
         <td><%= guest.introduction %></td>
         <td>
