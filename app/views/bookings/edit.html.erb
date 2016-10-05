@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @booking.errors.any? %>
+  <% @booking.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Booking #<%= @booking.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_booking/<%= @booking.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for listing_id -->
+      <div class="form-group">
+        <label for="listing_id" class="control-label">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id" name="listing_id" placeholder="Listing" class="form-control" value="<%= @booking.listing_id %>">
+      </div>
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @booking.date %>">
+      </div>
+
+      <!-- Label and input for price_alternative -->
+      <div class="form-group">
+        <label for="price_alternative" class="control-label">
+          Price alternative
+        </label>
+
+        <input type="text" id="price_alternative" name="price_alternative" placeholder="Price alternative" class="form-control" value="<%= @booking.price_alternative %>">
+      </div>
+
+      <!-- Label and input for guest_id -->
+      <div class="form-group">
+        <label for="guest_id" class="control-label">
+          Guest
+        </label>
+
+        <input type="text" id="guest_id" name="guest_id" placeholder="Guest" class="form-control" value="<%= @booking.guest_id %>">
+      </div>
+
+      <!-- Label and input for book_yn -->
+      <div class="form-group">
+        <label for="book_yn" class="control-label">
+          Book yn
+        </label>
+
+        <input type="text" id="book_yn" name="book_yn" placeholder="Book yn" class="form-control" value="<%= @booking.book_yn %>">
+      </div>
+
+      <!-- Label and input for requests -->
+      <div class="form-group">
+        <label for="requests" class="control-label">
+          Requests
+        </label>
+
+        <input type="text" id="requests" name="requests" placeholder="Requests" class="form-control" value="<%= @booking.requests %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Booking
+      </button>
+      or
+      <a href="/bookings/<%= @booking.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
