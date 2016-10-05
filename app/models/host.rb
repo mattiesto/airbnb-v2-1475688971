@@ -1,6 +1,9 @@
 class Host < ApplicationRecord
   # Direct associations
 
+  has_many   :listings,
+             :dependent => :destroy
+
   has_many   :messages,
              :foreign_key => "recipient_id",
              :dependent => :destroy
