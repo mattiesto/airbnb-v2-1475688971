@@ -56,3 +56,63 @@
     </div>
   </div>
 </div>
+
+<!-- A Listing has many pictures -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Pictures
+      </li>
+
+      <% @listing.pictures.each do |picture| %>
+        <li class="list-group-item">
+          <a href="/pictures/<%= picture.id %>">
+            <%= picture.listing_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many bookings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Bookings
+      </li>
+
+      <% @listing.bookings.each do |booking| %>
+        <li class="list-group-item">
+          <a href="/bookings/<%= booking.id %>">
+            <%= booking.listing_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @listing.reviews.each do |review| %>
+        <li class="list-group-item">
+          <a href="/reviews/<%= review.id %>">
+            <%= review.content %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

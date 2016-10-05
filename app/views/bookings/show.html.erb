@@ -38,3 +38,23 @@
     </div>
   </div>
 </div>
+
+<!-- A Booking has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @booking.reviews.each do |review| %>
+        <li class="list-group-item">
+          <a href="/reviews/<%= review.id %>">
+            <%= review.content %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
